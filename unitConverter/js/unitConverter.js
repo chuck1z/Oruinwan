@@ -1,11 +1,5 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>ProgWebTest</title>
-
-<script> 
-	function idFinder (array, value) { //finds ID
+// JavaScript Document
+function idFinder (array, value) { //finds ID
 		var length = array.length;
 		for (i = 0; i < length; i++) {
 			if (value == array[i]) {
@@ -163,45 +157,3 @@
 		document.getElementById("valueInit").value = "";
 		document.getElementById("valueResult").value = "";
 	}
-</script>
-
-</head>
-
-<body>
-<div id= "formBox" class="formBox">
-	<h3 id = "test">UNIT CONVERTER</h3>
-	<form>
-      <label for="category">Category:</label>
-      <select name="category" onChange="changeSelect(this.form)">
-            <option value="Length">Length</option>
-            <option value="Weight">Weight</option>
-            <option value="Temperature">Temperature</option> 
-        </select>
-        <br>
-	  <label for="unitInit">Initial Unit:</label>
-	  <select class="input" id="unitInit" name="unitInit" onChange="result(this.form)">
-		  <option value="Kilometer">Kilometer</option>
-		  <option value="Mile">Mile</option>
-		  <option value="Inch">Inch</option>
-		</select>
-		<label for="unitResult">Converted Unit:</label>
-		<select class="input" id="unitResult" name="unitResult" onChange="result(this.form)">
-		  <option value="Kilometer">Kilometer</option>
-		  <option value="Mile">Mile</option>
-		  <option value="Inch">Inch</option>
-		</select>
-		<br>
-	  <label for="valueInit">Input:</label>
-		<input class="input" type="text" id="valueInit" name="valueInit" placeholder="Input" onChange="result(this.form)">
-	  <label for="valueResult">Result:</label>
-	  <input class="input" type="text" id="valueResult" name="valueResult" placeholder="Result" readonly>
-	  <p id="resulting"></p>
-		<br>
-	  <input class="button process" value="Process" onClick="result(this.form)" readonly>
-	  <input class="button process" value="Reverse" onClick="reverse(this.form)" readonly>
-	  <input class="button reset" type="reset">
-    </form>
-    
-</div>
-</body>
-</html>
