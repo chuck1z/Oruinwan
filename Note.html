@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<style>* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #404040;
+}
+
+.template {
+  font-size: 17px;
+  position: absolute;
+  bottom: 0px;
+  left: 15px;
+  color: white;
+}
+    
+a:visited {
+  color: #d0dfe8;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: whitesmoke;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+form {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  background: #d0dfe8;
+}
+  
+
+.form-inner {
+  padding: 30px;
+}
+
+.form-inner input,
+.form-inner textarea {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 1px;
+  border: none;
+  border-radius: 20px;
+  background: white;    
+}
+
+.form-inner textarea {
+  resize: vertical;    
+}
+
+button {
+  width: 25%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 7px;
+  border-radius: 20px;
+  border: none;
+  border-bottom: 4px solid #333333;
+  background: #404040;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+button:hover {
+  background: #333333;
+}
+
+@media (min-width: 568px) {
+  form {
+    width: 60%;
+  }
+}
+</style>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+    <title>Notepad Arkan</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    
+    <script>
+        function SaveButton() {
+            var userInput = document.getElementById("Notes").value;
+            var blob = new Blob([userInput], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, "Notes.txt");
+        }
+    </script>
+</head>
+    
+<body>
+<form class="decor" id="form">
+  <div class="form-inner">
+    <br>
+    <textarea placeholder="Note" id="Notes" wrap="soft"></textarea>
+    <p align="right">
+    <button type="button" onclick="SaveButton();">Download text</button>
+    </p>
+  </div>
+</form>
+</body>
+</html>
