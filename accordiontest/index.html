@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    
+<title>Oruinwan</title>
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/unitConverter.js"></script>
+</head>
+
+<body>
+    <div> <!-- header -->
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <img id="logo" src="img/testimg.png">
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+    <div> <!-- 1st -->
+        <div class="col-12">
+            <button class="accordion">Clock</button>
+        </div>
+    </div>
+    <div> <!-- 2nd -->
+        <div class="col-12">
+            <button class="accordion">Calendar</button>
+        </div>
+    </div>
+    <div> <!-- 3rd -->
+        <div class="col-12">
+            <button class="accordion">Weather</button>
+        </div>
+    </div>
+    <div> <!-- 4th -->
+        <div class="col-12">
+            <button class="accordion">Calculator</button>
+        </div>
+    </div>
+    <div> <!-- 5th -->
+        <div class="col-12">
+            <button class="accordion">Unit Converter</button>
+            <div class="panel">
+              <div id= "formBox" class="formBox">
+                <h3 id = "test">UNIT CONVERTER</h3>
+                <form>
+                  <label for="category">Category:</label>
+                  <select name="category" onChange="changeSelect(this.form)">
+                        <option value="Length">Length</option>
+                        <option value="Weight">Weight</option>
+                        <option value="Temperature">Temperature</option> 
+                    </select>
+                    <br>
+                  <label for="unitInit">Initial Unit:</label>
+                  <select class="input" id="unitInit" name="unitInit" onChange="result(this.form)">
+                      <option value="Kilometer">Kilometer</option>
+                      <option value="Mile">Mile</option>
+                      <option value="Inch">Inch</option>
+                    </select>
+                    <label for="unitResult">Converted Unit:</label>
+                    <select class="input" id="unitResult" name="unitResult" onChange="result(this.form)">
+                      <option value="Kilometer">Kilometer</option>
+                      <option value="Mile">Mile</option>
+                      <option value="Inch">Inch</option>
+                    </select>
+                    <br>
+                  <label for="valueInit">Input:</label>
+                    <input class="input" type="text" id="valueInit" name="valueInit" placeholder="Input" onChange="result(this.form)">
+                  <label for="valueResult">Result:</label>
+                  <input class="input" type="text" id="valueResult" name="valueResult" placeholder="Result" readonly>
+                  <p id="resulting"></p>
+                    <br>
+                  <input class="button process" value="Process" onClick="result(this.form)" readonly>
+                  <input class="button process" value="Reverse" onClick="reverse(this.form)" readonly>
+                  <input class="button reset" type="reset">
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div> <!-- 6th -->
+        <div class="col-12">
+            <button class="accordion">Notes</button>
+        </div>
+    </div>
+
+    
+    
+    
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("actives");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+              panel.style.maxHeight = null;
+                panel.style.borderBottom = "0vw";
+                panel.style.padding = "0%";
+                this.style.backgroundColor = "rgba(255,230,175,1.00)";
+            } else {
+              panel.style.maxHeight = "100%";
+                panel.style.borderBottom = "0.25vw black solid";
+                panel.style.padding = "2% 0%";
+                this.style.backgroundColor ="rgba(255,215,129,1.00)";
+            } 
+          });
+        }
+    </script>
+</body>
+</html>
