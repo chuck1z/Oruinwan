@@ -36,6 +36,49 @@
     <div> <!-- 4th -->
         <div class="col-12">
             <button class="accordion">Calculator</button>
+            <div class="calculator">
+
+              <form name="calc">
+                <input type="text" name="result" class="calculator-screen z-depth-1" value="" disabled />
+              </form>
+          
+              <div class="calculator-keys">
+                <button type="button" class="all-clear function" value ="all-clear"">AC</button>
+                <button type="button" class="operator" data-operator="%" value="mod">%</button>
+                <button type="button" class="operator" data-operator="^" value="^">^</button>
+                <button type="button" class="sqrt" data-sqrt="√" value="sqrt">√</button>
+          
+                <button type="button" class="operator" data-operator="+" value="+">+</button>
+                <button type="button" class="operator" data-operator="-" value="-">-</button>
+                <button type="button" class="operator" data-operator="*" value="*">&times;</button>
+                <button type="button" class="operator" data-operator=":" value="/">&divide;</button>
+          
+                <button type="button" value="7" data-btn="7" class="btn">7</button>
+                <button type="button" value="8" data-btn="8" class="btn">8</button>
+                <button type="button" value="9" data-btn="9" class="btn">9</button>
+          
+          
+                <button type="button" value="4" data-btn="4" class="btn">4</button>
+                <button type="button" value="5" data-btn="5" class="btn">5</button>
+                <button type="button" value="6" data-btn="6" class="btn">6</button>
+          
+          
+                <button type="button" value="1" data-btn="1" class="btn">1</button>
+                <button type="button" value="2" data-btn="2" class="btn">2</button>
+                <button type="button" value="3" data-btn="3" class="btn">3</button>
+          
+          
+                <button type="button" value="0" data-btn="0" class="btn">0</button>
+                <button type="button" value="00" data-btn="00" class ="btn">00</button>
+                <button type="button" class="decimal" data-decimal="dot" value=".">.</button>
+                
+                <button type="button" class="ans operator" value="=">=</button>
+          
+              </div>
+              <script type="text/javascript" src="js/calculator.js"></script>
+              <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+              <link rel="stylesheet" href="css/calculator.css">
         </div>
     </div>
     <div> <!-- 5th -->
