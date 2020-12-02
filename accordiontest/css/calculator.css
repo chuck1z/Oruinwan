@@ -51,8 +51,6 @@
     }
 
     .ans {
-      height: 98%;
-      grid-area: 3 / 4 / 7 / 5;
       background: #f0f0f0;;
       color: rgb(255, 145, 0);
     }
