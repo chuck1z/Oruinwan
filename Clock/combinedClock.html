@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,300&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<div class="container">
+    <div class="col-left">
+        <div class="clock">
+            <canvas id="canvas" width="400" height="400" class="circle"></canvas>
+        </div>
+        <br>
+    </div>
+    <div class="col-left">
+        <div>
+            <div class="content">
+                <div class="counter"></div>
+                <input id="seconds" type="number" placeholder="Seconds...">
+                <button class="button start" id="start" value="1" onclick="check(this)">START</button>
+                <button class="button start" id="continue" value="1" onclick="check(this)">CONTINUE</button>
+                <button class="button stop" id="stop" value="0" onclick="check(this)">STOP</button>
+                <button class="button stop" id="reset" onclick="resetTimer(); check(this);">RESET</button>
+                <button class="button start" id="submit" onclick="subm()">SUBMIT</button>
+            </div>
+        </div>
+        <div class="stopwatch">
+            <div>
+                <span class="time" id="display">00:00:00</span>
+            </div>
+
+            <div class="controls">
+                <button id="playButton" type="button" class="button">START</button>
+                <button id="pauseButton" type="button" class="button">PAUSE</button>
+                <button id="resetButton" type="button" class="buttonReset">RESET</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="ClockJS.js"></script>
+<script src="TimerJS.js"></script>
+<script src="StopwatchJS.js"></script>
+
+</body>
+</html>
