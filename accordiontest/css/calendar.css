@@ -10,13 +10,11 @@ html {
 }
 
 .containerCal {
-  height: 0%;
-  color: #eee;
+  width: auto;
+  height: auto;
   display: flex;
-  flex-wrap: inherit;
   justify-content: center;
   align-items: center;
-  transform: scale(0.7);
 }
 
 .calendar {
