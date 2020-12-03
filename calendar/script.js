@@ -31,8 +31,8 @@ const renderCalendar = () => {
         ).getDay();
 
     var nextDays = null;
-    
-    if(lastDay == 31 && prevLastDayIndex > 3 && prevLastDayIndex < 6){
+
+    if(date.getMonth() != 1 && prevLastDayIndex > 3 && prevLastDayIndex < 6){
         nextDays = 7 - lastDayIndex - 1;
     } else { 
         nextDays = 14 - lastDayIndex - 1; 
