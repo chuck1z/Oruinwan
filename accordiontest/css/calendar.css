@@ -10,11 +10,10 @@ html {
 }
 
 .containerCal {
-  width: 100%;
-  height: 50vmin;
+  height: 0%;
   color: #eee;
-  display: block;
   display: flex;
+  flex-wrap: inherit;
   justify-content: center;
   align-items: center;
   transform: scale(0.7);
