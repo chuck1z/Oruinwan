@@ -1,186 +1,178 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-html, body{
-    height: 100%;
-}
-
-body {
-    background-color: #d5e4f1;
-    color: #adb0b2;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 input {
-    font-family: "Roboto Mono", monospace;
-    display: block;
+  font-family: "Roboto Mono", monospace;
+  display: block;
 }
 
 h1 {
-    font-size: 48px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 200;
+  font-size: 48px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
 
-    text-align: center;
-    line-height: 59px;
+  text-align: center;
+  line-height: 59px;
 
-    padding: 0 64px;
-    margin: 0;
+  padding: 0 64px;
+  margin: 0;
 }
 
 .clock {
-    display: grid;
-    justify-items: center;
-    grid-row-gap: 23px;
-    width: 100%;
-    padding-top: 10%;
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 23px;
+  width: 100%;
+  padding-top: 10%;
 }
 
 .circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 270px;
-    width: 270px;
-    border: 4px solid;
-    border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+  width: 270px;
+  border: 4px solid;
+  border-radius: 50%;
 }
 
 .container {
-    margin: auto;
-    width: 60%;
-    display: block;
-    border-radius: 15px;
-    background-color: transparent;
-    justify-content: center;
-    padding: 20px;
+  margin: auto;
+  width: 60%;
+  display: block;
+  border-radius: 15px;
+  background-color: transparent;
+  justify-content: center;
+  padding: 20px;
 }
 
 .stopwatch {
-    display: grid;
-    justify-items: center;
-    grid-row-gap: 23px;
-    width: 100%;
-    padding-top: 25px;
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 23px;
+  width: 100%;
+  padding-top: 25px;
 }
 
 .time {
-    font-family: "Roboto Mono", monospace;
-    font-weight: 300;
-    font-size: 48px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  font-size: 48px;
 }
 
 .controls {
-    display: flex;
-    justify-content: space-between;
-    width: 150px;
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
 }
 
 .button {
-    font-family: "Avenir Next" , "Source Sans Pro", sans-serif;
-    cursor: pointer;
-    background-color: #1aa6b7;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    margin: 10px 2px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  font-family: "Avenir Next", "Source Sans Pro", sans-serif;
+  cursor: pointer;
+  background-color: #1aa6b7;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-.button:hover{
-    background-color: #12747f;
-    transition-duration: 150ms;
-    transition-property: background-color;
-    transition-timing-function: ease-in;
+.button:hover {
+  background-color: #12747f;
+  transition-duration: 150ms;
+  transition-property: background-color;
+  transition-timing-function: ease-in;
 }
 
 .buttonReset {
-    font-family: "Avenir Next" , "Source Sans Pro", sans-serif;
-    cursor: pointer;
-    background-color: #f56a79;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    margin: 10px 2px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  font-family: "Avenir Next", "Source Sans Pro", sans-serif;
+  cursor: pointer;
+  background-color: #f56a79;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .buttonReset:hover {
-    background-color: #ff414d;
-    transition-duration: 150ms;
-    transition-property: background-color;
-    transition-timing-function: ease-in;
+  background-color: #ff414d;
+  transition-duration: 150ms;
+  transition-property: background-color;
+  transition-timing-function: ease-in;
 }
 
 #playButton {
-    display: block;
+  display: block;
 }
 
 #pauseButton {
-    display: none;
+  display: none;
 }
 
-.content{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #adb0b2;
-    font-size: 3rem;
-    text-transform: uppercase;
-    font-family: "Roboto Mono", monospace;
-    padding-top: 10%;
+.content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #adb0b2;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: "Roboto Mono", monospace;
+  padding-top: 10%;
 }
 
-.start{
-    background-color: #1aa6b7;
-    color: #2c3347;
+.start {
+  background-color: #1aa6b7;
+  color: #2c3347;
 }
 
-.start:hover{
-    background-color: #12747f;
-    transition-duration: 150ms;
-    transition-property: background-color;
-    transition-timing-function: ease-in;
+.start:hover {
+  background-color: #12747f;
+  transition-duration: 150ms;
+  transition-property: background-color;
+  transition-timing-function: ease-in;
 }
 
-.stop{
-    background-color: #E00;
-    color: #2c3347;
+.stop {
+  background-color: #e00;
+  color: #2c3347;
 }
 
-.stop:hover{
-    background-color: #9e0000;
-    transition-duration: 150ms;
-    transition-property: background-color;
-    transition-timing-function: ease-in;
+.stop:hover {
+  background-color: #9e0000;
+  transition-duration: 150ms;
+  transition-property: background-color;
+  transition-timing-function: ease-in;
 }
 
-#continue, .stop, #start{
-    display: none;
+#continue,
+.stop,
+#start {
+  display: none;
 }
 
-
-#seconds{
-    width: 250px;
-    background: none;
-    outline: none;
-    border: none;
-    border-bottom: 4px solid #3c3f41;
-    padding: 1rem;
-    font-size: 2rem;
-    color: #adb0b2;
+#seconds {
+  width: 250px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 4px solid #3c3f41;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #adb0b2;
 }
 
-#seconds::placeholder{
-    color: #adb0b2;
+#seconds::placeholder {
+  color: #adb0b2;
 }
 
 .col-left {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
