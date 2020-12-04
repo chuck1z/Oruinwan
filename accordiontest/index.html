@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="header"> <!-- header -->
+    <div class="header" id="mainTop"> <!-- header -->
         
         <div class="col-12">
             <img id="logo" src="img/testimg.png">
@@ -21,6 +21,7 @@
     <div class="col-12 intro"> <!-- intro? -->
             <h1>Explanation of the site</h1>
             <h2>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h2>
+        <img style="width: 20%;display: block;margin: auto" src="img/P-Agus-Sh.jpg">
         </div>
     <div> <!-- 1st -->
         <div class="col-12" id="mainClock">
@@ -212,58 +213,17 @@
         </div>
     </div>
     <div> <!-- 5th -->
-        <div class="col-12" id="mainUnit">
-            <button class="accordion">Unit Converter</button>
-            <div class="panel">
-              <div id= "formBox" class="formBox">
-                <h3 id = "test">UNIT CONVERTER</h3>
-                <form>
-                  <label for="category">Category:</label>
-                  <select name="category" onChange="changeSelect(this.form)">
-                        <option value="Length">Length</option>
-                        <option value="Weight">Weight</option>
-                        <option value="Temperature">Temperature</option> 
-                    </select>
-                    <br>
-                  <label for="unitInit">Initial Unit:</label>
-                  <select class="input" id="unitInit" name="unitInit" onChange="result(this.form)">
-                      <option value="Kilometer">Kilometer</option>
-                      <option value="Mile">Mile</option>
-                      <option value="Inch">Inch</option>
-                    </select>
-                    <label for="unitResult">Converted Unit:</label>
-                    <select class="input" id="unitResult" name="unitResult" onChange="result(this.form)">
-                      <option value="Kilometer">Kilometer</option>
-                      <option value="Mile">Mile</option>
-                      <option value="Inch">Inch</option>
-                    </select>
-                    <br>
-                  <label for="valueInit">Input:</label>
-                    <input class="input" type="text" id="valueInit" name="valueInit" placeholder="Input" onChange="result(this.form)">
-                  <label for="valueResult">Result:</label>
-                  <input class="input" type="text" id="valueResult" name="valueResult" placeholder="Result" readonly>
-                  <p id="resulting"></p>
-                    <br>
-                  <input class="button process" value="Process" onClick="result(this.form)" readonly>
-                  <input class="button process" value="Reverse" onClick="reverse(this.form)" readonly>
-                  <input class="button reset" type="reset">
-                </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div> <!-- 6th -->
         <div class="col-12" id="mainNotes">
             <button class="accordion">Notes</button>
         </div>
     </div>
     <div class="footer col-12"> <!-- footer -->
         <div class="col-3"></div>
-        <a class="col-1" href="#mainClock">A</a>
-        <a class="col-1" href="#mainCalendar">B</a>
-        <a class="col-1" href="#mainWeather">C</a>
-        <a class="col-1" href="#mainCalculator">D</a>
-        <a class="col-1" href="#mainUnit">E</a>
+        <a class="col-1" href="#mainTop">A</a>
+        <a class="col-1" href="#mainClock">B</a>
+        <a class="col-1" href="#mainCalendar">C</a>
+        <a class="col-1" href="#mainWeather">D</a>
+        <a class="col-1" href="#mainCalculator">E</a>
         <a class="col-1" href="#mainNotes">F</a>
         <div class="col-3"></div>
     </div>
