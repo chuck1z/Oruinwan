@@ -78,7 +78,6 @@ body {margin: 0;}
 
 [class*="col-"] {
   float: left;
-  border: 1px solid transparent;
 }
 
 .col-1 {width: 8.33%;}
@@ -104,4 +103,8 @@ body {margin: 0;}
     position: fixed;
     z-index: 2;
     border: transparent;
+}
+
+.footer div {
+  border: 1px solid transparent;
 }
