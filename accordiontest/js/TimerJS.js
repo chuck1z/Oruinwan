@@ -7,6 +7,10 @@ var remseconds;
 var toCount;
 var toReset;
 var intervalName;
+var sound = document.getElementById("timerAlert");
+document.getElementById("reset").style.display = "block";
+
+
 
 function subm(){
     display("submit", "start");
@@ -25,8 +29,9 @@ function resetTimer() {
     clearInterval(intervalName);
     counter.innerHTML="";
     secondsInput.style.display = "block";
-    display("reset", "submit");
     toReset = true;
+    sound.pause();
+    sound.currentTime=0;
 }
 
 function check(stat){
@@ -40,7 +45,10 @@ function check(stat){
     else if (stat.id == "continue"){
         display('continue', "stop");
     } else {
-        display("reset", "submit")
+        document.getElementById("submit").style.display = "block";
+        document.getElementById("start").style.display = "none";
+        document.getElementById("continue").style.display = "none";
+        document.getElementById("stop").style.display = "none";
     }
 }
 
@@ -64,6 +72,7 @@ function count(){
     }
     else if (toReset == false){
         counter.innerHTML = "Done!";
+        playSound();
         document.getElementById("stop").style.display = "none";
         document.getElementById("continue").style.display = "none";
         document.getElementById("reset").style.display = "block";
@@ -84,4 +93,8 @@ function counting(){
 
     counter.innerHTML = minuts + " : " + remseconds;
     intervalName = setInterval(count, 1000);
+}
+
+function playSound() {
+    sound.play();
 }
