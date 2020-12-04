@@ -1,16 +1,22 @@
-body {
-  margin: 0;
-}
+body {margin: 0;}
 
 #logo {
-  width: 100%;
-  margin: auto;
-  display: block;
+   width: 28%;
+   margin: auto;
+    display: block;
+}
+
+.intro {
+    background-color: #F0B7A4;
+}
+
+.header div {
+    background-color: #F18C8E;
 }
 
 .accordion {
-  background-color: rgba(255, 230, 175, 1);
-  color: #444;
+  background-color: #568ea6;
+  color: black;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -18,86 +24,84 @@ body {
   border: none;
   outline: none;
   transition: 0.4s;
-  font-size: 3vw;
-  text-transform: uppercase;
-  border-bottom: 0.25vw solid black;
+	font-size: 3vw;
+	text-transform: uppercase;
+	border-bottom: 0.25vw solid black;
+	
 }
 
 .accordion:hover {
-  background-color: rgba(250, 232, 192, 1) !important;
+  background-color: rgba(86, 142, 186,1.00) !important
 }
 
 .actives:hover {
-  background-color: rgba(255, 221, 150, 1) !important;
+	background-color: rgba(48, 85, 134,1.00) !important
 }
 
 .panel {
   max-height: 0;
   overflow: hidden;
   transition: 0.2s ease-out;
+    background-color: #F1D1B5;
 }
 
 .accordion:after {
-  content: "\02795";
+  content: "\002B";
   font-size: 2.5vw;
-  color: #777;
+  color: black;
   float: right;
-  margin-left: 5px;
-  transform: translateY(0.3vw);
+  margin-left: 5%;
+    transition: 0.4s;
 }
 
 .actives:after {
-  content: "\2796";
+  content: "\002D"; 
+  color: white;
 }
 
-.panel p,
-.panel li {
-  font-family: raleway, Futura, Century Gothic, sans-serif;
-  font-size: 2vw;
+.panel p, .panel li {
+	font-family: raleway, Futura, Century Gothic, sans-serif;
+	font-size: 2;
 }
+
+.footer a {
+    font-size: 100%;
+    color: black;
+    font-family: raleway, Futura, Century Gothic, sans-serif;
+    display: block;
+    margin: auto;
+    text-align: center;
+    background-color: lightblue;
+}
+
+
 
 [class*="col-"] {
   float: left;
   border: 1px solid transparent;
 }
 
-.col-1 {
-  width: 8.33%;
-}
-.col-2 {
-  width: 16.66%;
-}
-.col-3 {
-  width: 25%;
-}
-.col-4 {
-  width: 33.33%;
-}
-.col-5 {
-  width: 41.66%;
-}
-.col-6 {
-  width: 50%;
-}
-.col-7 {
-  width: 58.33%;
-}
-.col-8 {
-  width: 66.66%;
-}
-.col-9 {
-  width: 75%;
-}
-.col-10 {
-  width: 83.33%;
-}
-.col-11 {
-  width: 91.66%;
-}
-.col-12 {
-  width: 100%;
-}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 
 * {
   box-sizing: border-box;
+}
+
+.footer {
+	bottom: 0vw;
+	height: auto;
+    position: fixed;
+    z-index: 2;
+    border: transparent;
 }

@@ -4,22 +4,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     
 <title>Oruinwan</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/unitConverter.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div> <!-- header -->
-        <div class="col-4">
-        </div>
-        <div class="col-4">
+    <div class="header"> <!-- header -->
+        
+        <div class="col-12">
             <img id="logo" src="img/testimg.png">
         </div>
-        <div class="col-4">
-        </div>
+        
     </div>
+    <div class="col-12 intro"> <!-- intro? -->
+            <h1>Explanation of the site</h1>
+            <h2>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h2>
+        </div>
     <div> <!-- 1st -->
-        <div class="col-12">
+        <div class="col-12" id="mainClock">
             <button class="accordion">Clock</button>
             <div class="panel">
                 <div class="container">
@@ -70,7 +74,7 @@
         </div>
     </div>
     <div> <!-- 2nd -->
-        <div class="col-12">
+        <div class="col-12" id="mainCalendar">
             <button class="accordion">Calendar</button>
             <div class="panel">
                 <link rel="stylesheet" href="css/calendar.css" />
@@ -107,21 +111,21 @@
                         <div class="days"></div>
                         </div>
                     </div>
-                    </body>
                     <script src="js/calendar.js"></script>
             </div>
         </div>
     </div>
     <div> <!-- 3rd -->
-        <div class="col-12">
+        <div class="col-12" id="mainWeather">
             <button class="accordion">Weather</button>
         </div>
     </div>
     <div> <!-- 4th -->
-        <div class="col-12">
+        <div class="col-12" id="mainCalculator">
             <button class="accordion">Calculator</button>
             <div class="panel">
-            <div class="calculator">
+                <div class="col-6">
+                    <div class="calculator">
 
               <form name="calc">
                 <input type="text" name="result" class="calculator-screen z-depth-1" value="" disabled />
@@ -168,10 +172,47 @@
               <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
               <link rel="stylesheet" href="css/calculator.css">
             </div>
+                    </div>
+            <div class="col-6">
+                <div id= "formBox" class="formBox">
+                <h3 id = "test">UNIT CONVERTER</h3>
+                <form>
+                  <label for="category">Category:</label>
+                  <select name="category" onChange="changeSelect(this.form)">
+                        <option value="Length">Length</option>
+                        <option value="Weight">Weight</option>
+                        <option value="Temperature">Temperature</option> 
+                    </select>
+                    <br>
+                  <label for="unitInit">Initial Unit:</label>
+                  <select class="input" id="unitInit" name="unitInit" onChange="result(this.form)">
+                      <option value="Kilometer">Kilometer</option>
+                      <option value="Mile">Mile</option>
+                      <option value="Inch">Inch</option>
+                    </select>
+                    <label for="unitResult">Converted Unit:</label>
+                    <select class="input" id="unitResult" name="unitResult" onChange="result(this.form)">
+                      <option value="Kilometer">Kilometer</option>
+                      <option value="Mile">Mile</option>
+                      <option value="Inch">Inch</option>
+                    </select>
+                    <br>
+                  <label for="valueInit">Input:</label>
+                    <input class="input" type="text" id="valueInit" name="valueInit" placeholder="Input" onChange="result(this.form)">
+                  <label for="valueResult">Result:</label>
+                  <input class="input" type="text" id="valueResult" name="valueResult" placeholder="Result" readonly>
+                  <p id="resulting"></p>
+                    <br>
+                  <input class="button process" value="Process" onClick="result(this.form)" readonly>
+                  <input class="button process" value="Reverse" onClick="reverse(this.form)" readonly>
+                  <input class="button reset" type="reset">
+                </form>
+                </div>
+                </div>
         </div>
     </div>
     <div> <!-- 5th -->
-        <div class="col-12">
+        <div class="col-12" id="mainUnit">
             <button class="accordion">Unit Converter</button>
             <div class="panel">
               <div id= "formBox" class="formBox">
@@ -212,9 +253,19 @@
         </div>
     </div>
     <div> <!-- 6th -->
-        <div class="col-12">
+        <div class="col-12" id="mainNotes">
             <button class="accordion">Notes</button>
         </div>
+    </div>
+    <div class="footer col-12"> <!-- footer -->
+        <div class="col-3"></div>
+        <a class="col-1" href="#mainClock">A</a>
+        <a class="col-1" href="#mainCalendar">B</a>
+        <a class="col-1" href="#mainWeather">C</a>
+        <a class="col-1" href="#mainCalculator">D</a>
+        <a class="col-1" href="#mainUnit">E</a>
+        <a class="col-1" href="#mainNotes">F</a>
+        <div class="col-3"></div>
     </div>
 
     
@@ -232,15 +283,37 @@
               panel.style.maxHeight = null;
                 panel.style.borderBottom = "0vw";
                 panel.style.padding = "0%";
-                this.style.backgroundColor = "rgba(255,230,175,1.00)";
+                this.style.backgroundColor = "#568EA6";
+                this.style.color="black";
             } else {
               panel.style.maxHeight = "100%";
                 panel.style.borderBottom = "0.25vw black solid";
                 panel.style.padding = "2% 0%";
-                this.style.backgroundColor ="rgba(255,215,129,1.00)";
+                this.style.backgroundColor ="#305572";
+                this.style.color="white";
             } 
           });
         }
     </script>
+    
+    <script> //scrolling on click, jquery only used for this
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+</script>
 </body>
 </html>
