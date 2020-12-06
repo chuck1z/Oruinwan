@@ -1,3 +1,2 @@
 # オールインワン | Oruinwan
-Web-based widget
-Web Programming course final project
+Web-based widget for Web Programming course final project
