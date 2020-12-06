@@ -10,8 +10,6 @@ var intervalName;
 var sound = document.getElementById("timerAlert");
 document.getElementById("reset").style.display = "block";
 
-
-
 function subm(){
     display("submit", "start");
     seconds = Number(secondsInput.value);
@@ -86,11 +84,9 @@ function counting(){
     if(remseconds < 10){
         remseconds = "0" + remseconds;
     }
-
     if(minuts < 10){
         minuts = "0" + minuts;
     }
-
     counter.innerHTML = minuts + " : " + remseconds;
     intervalName = setInterval(count, 1000);
 }
