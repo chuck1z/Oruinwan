@@ -5,24 +5,6 @@
   left: 15px;
   color: white;
 }
-    
-a:visited {
-  color: #d0dfe8;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: whitesmoke;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
-}
 
 form {
   position: relative;
