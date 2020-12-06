@@ -11,8 +11,6 @@ function drawClock() {
 }
 
 function drawFace(ctx, radius) {
-    var grad;
-
     ctx.beginPath();
     ctx.arc(0, 0, radius, 0, 2 * Math.PI);
     ctx.fillStyle = '#fef9ff';
@@ -31,7 +29,7 @@ function drawNumbers(ctx, radius) {
         ctx.translate(0, -radius * 0.85);
         ctx.rotate(-ang);
         if (num%3==0){
-            ctx.fillStyle = "#adb0b2";
+            ctx.fillStyle = "#2c3347";
             ctx.fillText(num.toString(), 0, 0);
         }
         ctx.rotate(ang);
@@ -59,7 +57,7 @@ function drawTime(ctx, radius){
 
 function drawHand(ctx, pos, length, width) {
     ctx.beginPath();
-    ctx.strokeStyle = "#adb0b2";
+    ctx.strokeStyle = "#2c3347";
     ctx.lineWidth = width;
     ctx.lineCap = "round";
     ctx.moveTo(0,0);
