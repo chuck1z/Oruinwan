@@ -1,53 +1,54 @@
-const calculator = {
-  displayValue: '0',
+const calculator = { //base state
+  display: '',
   firstOperand: null,
-  waitingForSecondOperand: false,
+  nextOperand: false,
   operator: null,
 };
 
-function inputDigit(digit) {
-  const { displayValue, waitingForSecondOperand } = calculator;
+function Num(num) { //function to input number
+  const { display, nextOperand } = calculator;
 
-  if (waitingForSecondOperand === true) {
-    calculator.displayValue = digit;
-    calculator.waitingForSecondOperand = false;
+  if (nextOperand === true) { 
+    calculator.display = num;
+    calculator.nextOperand = false;
   } else 
     {
-    calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+    calculator.display = display === '0' ? num : display + num;
   }
 }
 
-function inputDecimal(dot) {
-  if (!calculator.displayValue.includes(dot)) {
-    calculator.displayValue += dot;
+function Decimal(dot) { //function to input dot
+  if (!calculator.display.includes(dot)) { //prevents to input more than 1 dot
+    calculator.display += dot;
   }
 }
 
-function handleOperator(nextOperator) {
-  const { firstOperand, displayValue, operator } = calculator
-  const inputValue = parseFloat(displayValue);
+//function to handle operator
+function operatorHandler(nextOperator){ 
+  const {firstOperand, display, operator} = calculator
+  const inputValue = parseFloat(display);
 
-  if (operator && calculator.waitingForSecondOperand)  {
+  if (operator && calculator.nextOperand){
     calculator.operator = nextOperator;
     return;
   }
 
-  if (firstOperand == null) {
+  if (firstOperand == null){
     calculator.firstOperand = inputValue;
   } 
-  else if (operator) {
+  else if (operator){
     const currentValue = firstOperand || 0;
     const ans = Calculate[operator](currentValue, inputValue);
 
-    calculator.displayValue = String(ans);
+    calculator.display = String(ans);
     calculator.firstOperand = ans;
   }
 
-  calculator.waitingForSecondOperand = true;
+  calculator.nextOperand = true;
   calculator.operator = nextOperator;
 }
 
-const Calculate = {
+const Calculate = { //base calculation
   '/': (firstOperand, secondOperand) => firstOperand / secondOperand,
   '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
   '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
@@ -57,58 +58,58 @@ const Calculate = {
   '=': (firstOperand, secondOperand) => secondOperand
 };
 
-function clear() {
-  calculator.displayValue = '0';
+function clear(){ //display clear, resets back to base state
+  calculator.display = '';
   calculator.firstOperand = null;
-  calculator.waitingForSecondOperand = false;
+  calculator.nextOperand = false;
   calculator.operator = null;
-  updateDisplay()
+  update()
 }
 
-function updateDisplay() {
+function update(){ //display update
   const display = document.querySelector('.calculator-screen');
-  display.value = calculator.displayValue;
+  display.value = calculator.display;
 }
 
-function SQRT(){
-  var result = Math.sqrt(calculator.displayValue);
-  calculator.displayValue = result;
+function SQRT(){ //function for square root operation, since it's not possible to do it with basic calculation
+  var result = Math.sqrt(calculator.display);
+  calculator.display = result;
 }
 
-updateDisplay();
-
+//event listener
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
-  const { target } = event;
-  if (!target.matches('button')) {
+
+  const {target} = event;
+
+  if (!target.matches('button')){
     return;
   }
 
-  if (target.classList.contains('operator')) {
-    handleOperator(target.value);
-		updateDisplay();
+  if (target.classList.contains('operator')){
+    operatorHandler(target.value);
+		update();
     return;
   }
 
-  if (target.classList.contains('decimal')) {
-    inputDecimal(target.value);
-		updateDisplay();
+  if (target.classList.contains('decimal')){
+    Decimal(target.value);
+		update();
     return;
   }
 
   if(target.classList.contains('all-clear')){
     clear();
-    updateDisplay();
     return;
   }
 
   if(target.classList.contains('sqrt')){
     SQRT();
-    updateDisplay();
+    update();
     return;
   }
 
-  inputDigit(target.value);
-  updateDisplay();
+  Num(target.value);
+  update();
 }
 );
