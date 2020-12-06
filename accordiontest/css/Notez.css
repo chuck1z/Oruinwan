@@ -1,0 +1,71 @@
+.template {
+  font-size: 17px;
+  position: absolute;
+  bottom: 0px;
+  left: 15px;
+  color: white;
+}
+    
+a:visited {
+  color: #d0dfe8;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: whitesmoke;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+form {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  background: #d0dfe8;
+}
+  
+
+.form-inner {
+  padding: 30px;
+}
+
+.form-inner input,
+.form-inner textarea {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 1px;
+  border: none;
+  border-radius: 20px;
+  background: white;    
+}
+
+.form-inner textarea {
+  resize: vertical;
+  height: 500px;
+}
+
+.form-inner button {
+  width: 25%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 7px;
+  border-radius: 20px;
+  border: none;
+  border-bottom: 4px solid #333333;
+  background: #404040;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.form-inner button:hover {
+  background: #333333;
+}
