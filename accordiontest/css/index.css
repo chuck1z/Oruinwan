@@ -8,7 +8,7 @@ body {margin: 0;}
 
 .intro {
     padding: 2.5%;
-    background-color: mediumseagreen;
+    background-color: #43C07B;
     color: black;
     border-bottom: 0.25vw black solid;
     border-top: 0.25vw black solid;
@@ -24,7 +24,7 @@ body {margin: 0;}
 }
 
 .header div {
-    background-color: whitesmoke;
+    background-color: #FDF3D9;
 }
 
 .accordion {
@@ -55,7 +55,7 @@ body {margin: 0;}
   max-height: 0;
   overflow: hidden;
   transition: 0.2s ease-out;
-    background-color: #F1D1B5;
+    background-color: #FBD588;
 }
 
 .accordion:after {
@@ -78,16 +78,34 @@ body {margin: 0;}
 }
 
 .footer a {
-    font-size: 100%;
+    font-size: 200%;
     color: black;
     font-family: raleway, Futura, Century Gothic, sans-serif;
     display: block;
     margin: auto;
     text-align: center;
-    background-color: lightblue;
+    background-color: #44DC97;
+    text-decoration: none;
+    padding: 0.5%;
+    border: black solid;
+    border-bottom: transparent;
+    border-collapse: collapse;
+    transition: .3s;
+    bottom: 0vw;
+    position:static;
 }
 
+.footer a:not(:nth-child(2)) {
+    border-left: transparent;
+}
 
+.footer a:hover {
+    font-weight: bolder;
+    background-color: #31D88D;
+}
+.footer:not(:hover) {
+    margin-bottom: -25px;
+}
 
 [class*="col-"] {
   float: left;
@@ -112,10 +130,10 @@ body {margin: 0;}
 
 .footer {
 	bottom: 0vw;
-	height: auto;
+    height: auto;
     position: fixed;
     z-index: 2;
-    border: transparent;
+    transition: 0.2s;
 }
 
 .footer div {

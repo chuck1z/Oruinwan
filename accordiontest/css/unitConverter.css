@@ -1,0 +1,67 @@
+.formBox {
+    height: 100%;
+}
+
+.formBox h3 {
+    font-size: 475%;
+    margin-bottom: 2%;
+    margin-top: 2.5%;
+}
+
+.formBox button {
+    bottom: auto;
+}
+
+.formBox label {
+    font-size: 300%;
+}
+
+.formBox select {
+    font-size: 250%;
+}
+
+.input {
+    font-size: 250%;
+    margin-bottom: 2%;
+    margin-top: 0;
+    width: 150px;
+}
+
+.formBox input {
+    padding-left: 2px;
+}
+
+.formBox img {
+    width: 15%;
+    margin-bottom: 2%;
+}
+
+.unitButton {
+    font-size: 350%;
+    width: 66%;
+    text-align: center;
+    margin-top: 6%;
+    border: black solid 1px;
+    transition: .2s;
+}
+
+.unitButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.copy {
+    background-color: #E95A36;
+}
+
+.copy:hover {
+    background-color: #E74A23;
+}
+
+.reverse {
+    background-color: #70EE62;
+}
+
+.reverse:hover {
+    background-color: #5BEC4A;
+}
