@@ -7,11 +7,24 @@ body {margin: 0;}
 }
 
 .intro {
-    background-color: #F0B7A4;
+    padding: 2.5%;
+    background-color: mediumseagreen;
+    color: black;
+    border-bottom: 0.25vw black solid;
+    border-top: 0.25vw black solid;
+}
+
+.intro h2 {
+    font-size: 350%;
+    font-weight: bolder;
+}
+
+.intro h3 {
+    font-size: 200%;
 }
 
 .header div {
-    background-color: #F18C8E;
+    background-color: whitesmoke;
 }
 
 .accordion {
