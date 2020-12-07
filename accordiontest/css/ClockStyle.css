@@ -1,4 +1,19 @@
-.content input {
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+body {
+    background-color: #f1d1b5;
+    color: #2c3347;
+}
+
+input {
     font-family: "Roboto Mono", monospace;
     display: block;
 }

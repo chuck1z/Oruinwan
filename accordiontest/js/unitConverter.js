@@ -73,22 +73,17 @@ function idFinder (array, value) { //finds ID
 		var valueInit = form.valueInit.value;
 		var valueResult = form.valueResult.value;
 		var category = form.category.value;
-        var decimals = form.decimals.value;
 
-		var categories = ["Length","Weight","Temperature","Time","Area"];
+		var categories = ["Length","Weight","Temperature"];
 		var units = [
-			["Kilometer","Meter","Centimeter","Mile","Inch"],
-			["Kilogram","Gram","Ounce","Pound","Metric Ton"],
-			["Celcius","Fahrenheit","Kelvin"],
-            ["Hour","Minute","Second","Day","Week","Month","Year"],
-            ["Square km","Square m","Square cm"]
+			["Kilometer","Mile","Inch"],
+			["Kilogram","Ounce","Pound","Ton"],
+			["Celcius","Fahrenheit","Kelvin"]
 		];
 		var weight = [
-			[1,1000,100000,0.62137,39370],
-			[1,1000,35.274,2.20462,0.001],
-			[],
-            [1,60,3600,0.041666667,0.005952381,0.00011407712],
-            [1,1000000,10,000,000,000]
+			[1,0.62137,39370],
+			[1,35.274,2.20462,0.00110231],
+			[]
 		];
 		
 		var categoryID = idFinder(categories, category);
@@ -98,12 +93,10 @@ function idFinder (array, value) { //finds ID
 		
 		var number = parseFloat(valueInit);
 		var result = calculate(weight, categoryID, unitInitID, unitResultID, number);
+		//var result = number * (weight[categoryID][unitResultID]/weight[categoryID][unitInitID]);
 		
 		if(valueInit !== ""){
-			document.getElementById("valueResult").value = 
-                result.toFixed(parseFloat(decimals));
-            document.getElementById("valueInit").value = 
-                number.toFixed(parseFloat(decimals));
+			document.getElementById("valueResult").value = result;
 		} else{
 			document.getElementById("valueResult").value = "";
 		}
@@ -115,7 +108,6 @@ function idFinder (array, value) { //finds ID
 		var unitResult = form.unitResult.value;
 		var valueInit = form.valueInit.value;
 		var valueResult = form.valueResult.value;
-        var decimals = form.decimals.value;
 
 		var selections = document.getElementById("unitInit");
 		var size = selections.options.length;
@@ -135,22 +127,20 @@ function idFinder (array, value) { //finds ID
 		document.getElementById("unitResult").selectedIndex = unitInitID;
 		
 		if(valueInit !== "") {
-			document.getElementById("valueResult").value = number.toFixed(parseFloat(decimals));
-			document.getElementById("valueInit").value = result.toFixed(parseFloat(decimals));
+			document.getElementById("valueResult").value = number;
+			document.getElementById("valueInit").value = result;
 		}
 	}
 	
 	function changeSelect (form) { //main function for changing list values
 		var category = form.category.value;
-		var categories = ["Length","Weight","Temperature","Time","Area"];
+		var categories = ["Length","Weight","Temperature"]
 		
 		var categoryID = idFinder(categories, category);
 		var categoryValue = [
-			["Kilometer","Meter","Centimeter","Mile","Inch"],
-			["Kilogram","Gram","Ounce","Pound","Metric Ton"],
-			["Celcius","Fahrenheit","Kelvin"],
-            ["Hour","Minute","Second","Day","Week","Month","Year"],
-            ["Square km","Square m","Square cm"]
+			["Kilometer","Mile","Inch"],
+			["Kilogram","Ounce","Pound","Ton"],
+			["Celcius","Fahrenheit","Kelvin"]
 		];
 		
 		var dropList1 = document.getElementById("unitInit");
@@ -166,19 +156,4 @@ function idFinder (array, value) { //finds ID
 		
 		document.getElementById("valueInit").value = "";
 		document.getElementById("valueResult").value = "";
-        document.getElementById("unitIcon").src = "img/".concat(category).concat(".png");
 	}
-
-    function copyAfter () {
-        document.getElementById("copyButton").value = "Copy";
-    }
-
-    function copy () { //function to copy result
-        var valueResult = document.getElementById("valueResult");
-        
-        valueResult.select();
-        valueResult.setSelectionRange(0, 99999);
-        document.execCommand("copy");
-        document.getElementById("copyButton").value = "Copied!";
-        setTimeout(copyAfter, 2000);
-    }

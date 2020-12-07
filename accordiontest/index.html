@@ -6,7 +6,6 @@
 <title>Oruinwan</title>
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet" type="text/css">
-<link href="css/unitConverter.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/unitConverter.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -163,8 +162,8 @@ So, let's start optimizing your day with Oruinwan!</h2>
         </div>
     <div> <!-- 4th -->
         <div class="col-12" id="mainCalculator">
-            <button class="accordion">Calculator & Unit Converter</button>
-            <div class="panel" style="display: flex">
+            <button class="accordion">Calculator</button>
+            <div class="panel">
                 <div class="col-4">
                     <div class="calculator">
 
@@ -207,93 +206,37 @@ So, let's start optimizing your day with Oruinwan!</h2>
                     </div>
             <div class="col-8">
                 <div id= "formBox" class="formBox">
-                    <div class="col-5">
-                <h3>UNIT CONVERTER</h3>
-                    </div>
-                    <div class="col-7">
-                    <img id="unitIcon" src="img/Length.png">
-                        </div>
+                <h3 id = "test">UNIT CONVERTER</h3>
                 <form>
-                    <div style="width: 16%;float: left;">
-                  <label for="category">Category: </label>
-                        </div>
-                    <div style="width: 29%;float: left;">
-                  <select class="input" name="category" onChange="changeSelect(this.form)">
+                  <label for="category">Category:</label>
+                  <select name="category" onChange="changeSelect(this.form)">
                         <option value="Length">Length</option>
                         <option value="Weight">Weight</option>
                         <option value="Temperature">Temperature</option> 
-                      <option value="Time">Time</option> 
-                      <option value="Area">Area</option>
                     </select>
-                        </div>
-                    <div style="width: 23%;float: left;">
-                  <label for="category">Decimal Places: </label>
-                        </div>
-                    <div style="width: 32%;float: left;">
-                  <select class="input" name="decimals" onChange="result(this.form)">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                        </div>
                     <br>
-                    <div style="width: 16%;float: left;">
-                  <label for="unitInit">Initial Unit: </label>
-                    </div>
-                    <div style="width: 29%;float: left;">
+                  <label for="unitInit">Initial Unit:</label>
                   <select class="input" id="unitInit" name="unitInit" onChange="result(this.form)">
                       <option value="Kilometer">Kilometer</option>
-                      <option value="Meter">Meter</option>
-                      <option value="Centimeter">Centimeter</option>
                       <option value="Mile">Mile</option>
                       <option value="Inch">Inch</option>
                     </select>
-                        </div>
-                    <div style="width: 23%;float: left;">
-                    <label for="unitResult">Converted Unit:  </label>
-                    </div>
-                    <div style="width: 32%;float: left;">
+                    <label for="unitResult">Converted Unit:</label>
                     <select class="input" id="unitResult" name="unitResult" onChange="result(this.form)">
                       <option value="Kilometer">Kilometer</option>
-                      <option value="Meter">Meter</option>
-                      <option value="Centimeter">Centimeter</option>
                       <option value="Mile">Mile</option>
                       <option value="Inch">Inch</option>
                     </select>
-                        </div>
                     <br>
-                    <div style="width: 16%;float: left; margin-top: 18px">
-                  <label for="valueInit">Input: </label>
-                    </div>
-                    <div style="width: 29%;float: left; margin-top: 18px">
+                  <label for="valueInit">Input:</label>
                     <input class="input" type="text" id="valueInit" name="valueInit" placeholder="Input" onChange="result(this.form)">
-                    </div>
-                    <div style="width: 23%;float: left; margin-top: 18px">
                   <label for="valueResult">Result:</label>
-                    </div>
-                    <div style="width: 32%;float: left; margin-top: 18px">
                   <input class="input" type="text" id="valueResult" name="valueResult" placeholder="Result" readonly>
-                    </div>
+                  <p id="resulting"></p>
                     <br>
-                    <div class="col-1" style="border: solid 1px #FBD588"></div>
-                    <div class="col-5">
-                  <input class="unitButton reverse" value="Reverse" onClick="reverse(this.form)" readonly>
-                        </div>
-                    <div class="col-5">
-                  <input id="copyButton" class="unitButton copy" value="Copy" onClick="copy()" readonly>
-                        </div>
-                    <div class="col-1" style="border: solid 1px #FBD588"></div>
-                    <div>
-                    
-                    </div>
+                  <input class="button process" value="Process" onClick="result(this.form)" readonly>
+                  <input class="button process" value="Reverse" onClick="reverse(this.form)" readonly>
+                  <input class="button reset" type="reset">
                 </form>
                 </div>
                 </div>
@@ -323,12 +266,12 @@ So, let's start optimizing your day with Oruinwan!</h2>
     </div>
     <div class="footer col-12"> <!-- footer -->
         <div class="col-3"></div>
-        <a class="col-1" href="#mainTop">Top</a>
-        <a class="col-1" href="#mainClock">Clock</a>
-        <a class="col-1" href="#mainCalendar">Calendar</a>
-        <a class="col-1" href="#mainWeather">Weather</a>
-        <a class="col-1" href="#mainCalculator">Calculator</a>
-        <a class="col-1" href="#mainNotes">Notes</a>
+        <a class="col-1" href="#mainTop">A</a>
+        <a class="col-1" href="#mainClock">B</a>
+        <a class="col-1" href="#mainCalendar">C</a>
+        <a class="col-1" href="#mainWeather">D</a>
+        <a class="col-1" href="#mainCalculator">E</a>
+        <a class="col-1" href="#mainNotes">F</a>
         <div class="col-3"></div>
     </div>
 
