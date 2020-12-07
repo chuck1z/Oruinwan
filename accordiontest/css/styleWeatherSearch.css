@@ -1,7 +1,3 @@
-*{
-    font-family: "Rimouski";
-}
-
 .containerSearch{
     width: 300px;    
     background-color: #f18c8e;
@@ -16,7 +12,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 15px 15px;
+    padding: 35px 15px 15px;
 }
 
 header input {
@@ -53,14 +49,16 @@ main {
     margin: 0;
     color: #293251;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 2.5em;
+    font-weight: bold;
 }
 
 .current .temp {
     padding: 0;
     margin: 0;
     color: #293251;
-    font-size: 4em;
+    font-size: 6em;
+    font-weight: bolder;
     text-align: center;
     cursor: pointer;
 }
@@ -74,7 +72,8 @@ main {
     margin: 0;
     color: #293251;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 2em;
+    font-style: italic;
 }
 
 .current .hi-low {
@@ -82,5 +81,6 @@ main {
     padding: 0;
     color: #293251;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 3em;
+    font-weight: lighter;
 }
