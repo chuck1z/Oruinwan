@@ -13,7 +13,7 @@ function Num(num) { //function to input number
     calculator.nextOperand = false;
   } else 
     {
-    calculator.display = display === '0' ? num : display + num;
+    calculator.display = display === '' ? num : display + num;
   }
 }
 
