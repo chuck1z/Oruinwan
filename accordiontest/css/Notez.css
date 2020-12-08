@@ -1,18 +1,3 @@
-.template {
-  font-size: 17px;
-  position: absolute;
-  bottom: 0px;
-  left: 15px;
-  color: white;
-}
-
-/*form {
-  position: relative;
-  width: 100%;
-  border-radius: 30px;
-  background: #d0dfe8;
-}*/
-  
 
 .form-inner {
   padding: 30px;
@@ -20,6 +5,7 @@
 
 .form-inner input,
 .form-inner textarea {
+  font-size: 24px;
   display: block;
   width: 100%;
   padding: 20px;
@@ -43,7 +29,7 @@
   border: none;
   border-bottom: 4px solid #333333;
   background: #404040;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #fff;
 }
